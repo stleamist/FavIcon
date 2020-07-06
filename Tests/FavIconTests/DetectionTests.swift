@@ -222,11 +222,6 @@ class DetectionTests: XCTestCase {
         XCTAssertEqual(IconType.microsoftPinnedSite.rawValue, icons[24].type.rawValue)
         XCTAssertEqual(310, icons[24].width!)
         XCTAssertEqual(310, icons[24].height!)
-
-        XCTAssertEqual("https://www.facebook.com/images/fb_icon_325x325.png", icons[25].url.absoluteString)
-        XCTAssertEqual(IconType.openGraphImage.rawValue, icons[25].type.rawValue)
-        XCTAssertNil(icons[25].width)
-        XCTAssertNil(icons[25].height)
     }
 
     func testIssue6_ContentTypeWithEmptyComponent() {

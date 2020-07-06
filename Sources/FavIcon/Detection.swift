@@ -75,11 +75,6 @@ func detectHTMLHeadIcons(_ document: HTMLDocument, baseURL: URL) -> [Icon] {
             guard let url = URL(string: content, relativeTo: baseURL) else { continue }
             guard let size = microsoftSizeHints[name] else { continue }
             icons.append(Icon(url: url, type: .microsoftPinnedSite, width: size.width, height: size.height))
-        } else if let property = meta.attributes["property"]?.lowercased() {
-            guard let content = meta.attributes["content"] else { continue }
-            guard property == "og:image" else { continue }
-            guard let imageURL = URL(string: content, relativeTo: baseURL) else { continue }
-            icons.append(Icon(url: imageURL, type: .openGraphImage))
         }
     }
 
